@@ -46,13 +46,10 @@ public class RecentlyUsedListTests {
         listOne.add("hello world");
         listOne.add("Adding");
         listOne.add("Some");
-        assertThat(listOne.itemUnique(), is(true));
+        assertThat(listOne.contains("some"), is(true));
         listOne.add("Some");
-        assertThat(listOne.itemUnique(), is(true));
-//        listOne.add("hello world");
-//        listOne.add("Adding");
-//        listOne.add("Some");
-//        assertThat(listOne.itemUnique(), is(false));
+        assertThat(listOne.contains("some"), is(true));
+
 
     }
 }
