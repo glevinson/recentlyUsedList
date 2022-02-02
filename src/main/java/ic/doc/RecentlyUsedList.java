@@ -3,31 +3,30 @@ package ic.doc;
 import java.util.LinkedList;
 import java.util.List;
 
-import static java.util.Collections.list;
+public class RecentlyUsedList<E> {
 
-public class RecentlyUsedList {
-
-    private List<String> list = new LinkedList<>();
+    private final List<E> list = new LinkedList<>();
 
     public boolean isEmpty() {
-        if (list.size() == 0) {
-            return true;
-        }
-        return false;
+        return list.size() == 0;
     }
 
-    public void add(String item) {
+    public void add(E item) {
         if (list.contains(item)) {
-            list.remove(list.indexOf(item));
+            list.remove(item);
         }
         list.add(item);
     }
 
-    public String get(int index) {
+    public E get(int index) {
         return list.get(list.size() - index - 1);
     }
 
-    public boolean contains(String word) {
-        return list.contains(word);
+    public boolean contains(E item) {
+        return list.contains(item);
+    }
+
+    public int size() {
+        return list.size();
     }
 }
